@@ -1,8 +1,6 @@
 """
 =============================================================================
 POSTE ITALIANE – Customer Needs & Sales Network Analysis
-"How to Satisfy Our Customers' Needs?"
-Alikhan Salimov, Arshat Kaipbergen, Anuar Abdumannapov, Temirlan Zorlykbaev
 
 Full analysis pipeline:
   Step 1 – Population Needs Modeling (external data, province level)
