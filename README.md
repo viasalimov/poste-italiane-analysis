@@ -1,8 +1,5 @@
 # Poste Italiane – Customer Needs & Sales Network Analysis
 
-**Grand Challenge · LUISS University · Bachelor in Management and AI · 2025**  
-*Team: Alikhan Salimov, Arshat Kaipbergen, Anuar Abdumannapov, Temirlan Zorlykbaev*
-
 ---
 
 ## Business Problem
