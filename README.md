@@ -94,7 +94,7 @@ pip install -r requirements.txt
 # - Internal Clients Data for step 2(...).csv
 
 # Run the full pipeline
-python poste_grand_challenge.py
+python poste_italiane_analysis.py
 
 # Outputs saved to /outputs folder
 ```
