@@ -1,0 +1,8 @@
+# Confidential Poste Italiane data (NDA) — never commit
+*.csv
+*.xls
+*.xlsx
+External Data*
+Internal Clients Data*
+rawdata/
+outputs/*.csv

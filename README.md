@@ -10,6 +10,14 @@ This project builds a full end-to-end data pipeline to answer: *"How do we ident
 
 ---
 
+## Data & Confidentiality
+
+The datasets used in this project were provided by **Poste Italiane** for an academic challenge (LUISS Grand Challenge) under a **Non-Disclosure Agreement**. The data — internal customer records aggregated at provincial level, plus external ISTAT demographics — is confidential and **is NOT included in this repository**.
+
+This repo contains only the **analysis code** and the **generated visual outputs** (charts and dashboard), which show aggregated, province-level patterns and cannot be used to reconstruct any raw or customer-level records. To reproduce the results, place your own copy of the source data in the project root (see *How to Run*).
+
+---
+
 ## Project Pipeline
 
 ```
@@ -41,6 +49,9 @@ External ISTAT Data (73 variables)       Internal Customer Data (21.9M customers
 
 > PCA: PC1 = 79.2%, PC2 = 13.6% → **92.8% total variance explained**
 
+![Province Clusters in PCA space](outputs/fig08_clusters.png)
+*107 provinces clustered by need profile (K-Means, k=4) projected onto the first two principal components.*
+
 ### ML Model Performance (Random Forest)
 | Product | Test AUC | CV AUC | PR-AUC |
 |---------|----------|--------|--------|
@@ -49,6 +60,9 @@ External ISTAT Data (73 variables)       Internal Customer Data (21.9M customers
 | Investment | 0.726 | 0.729 | 0.429 |
 | Postal Savings | 0.663 | 0.661 | 0.728 |
 | Utilities | 0.595 | 0.589 | 0.375 |
+
+![ROC curves for 5 Random Forest models](outputs/fig16_roc_curves.png)
+*ROC curves for the five product-ownership models; AUC ranges 0.60–0.74, evaluated with cross-validation and PR-AUC to handle class imbalance.*
 
 ### Advisor Allocation
 ```
@@ -59,6 +73,9 @@ Score = Customers × (Opportunity Gap + 0.1) × (1 – Digital Score)
 | North  | 5,436    | 54.4% |
 | Centre | 2,597    | 25.9% |
 | South  | 1,967    | 19.7% |
+
+![Advisor allocation across 107 provinces](outputs/fig20_advisor_allocation.png)
+*Final allocation of 10,000 advisors across all 107 provinces, coloured by macro-region.*
 
 ---
 
@@ -75,11 +92,11 @@ Score = Customers × (Opportunity Gap + 0.1) × (1 – Digital Score)
 
 | File | Description |
 |------|-------------|
-| `fig01` – `fig21` | 21 static charts (EDA, clusters, ROC curves, feature importance, etc.) |
-| `interactive_dashboard.html` | Full Plotly dashboard — open in browser |
-| `external_enriched.csv` | 107 provinces × enriched socioeconomic variables |
-| `gap_analysis.csv` | Need vs ownership gap by province |
-| `advisor_allocation_by_province.csv` | Final advisor sizing output |
+| `outputs/fig01` – `fig21` | 21 static charts (EDA, clusters, ROC curves, feature importance, etc.) — **included in repo** |
+| `outputs/interactive_dashboard.html` | Full Plotly dashboard — **included in repo**, open in browser |
+| `external_enriched.csv` | 107 provinces × enriched variables — *generated locally, not committed (NDA)* |
+| `gap_analysis.csv` | Need vs ownership gap by province — *generated locally, not committed (NDA)* |
+| `advisor_allocation_by_province.csv` | Final advisor sizing output — *generated locally, not committed (NDA)* |
 
 ---
 
